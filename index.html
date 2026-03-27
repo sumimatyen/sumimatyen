@@ -658,8 +658,8 @@ ul li::before {
   <button class="nav-btn" onclick="show('chars')">角色</button>
   <button class="nav-btn" onclick="show('timeline')">時間線</button>
   <button class="nav-btn" onclick="show('tension')">結構張力</button>
-  <button class="nav-btn" onclick="show('lore')">碎片</button>
   <button class="nav-btn" onclick="show('style')">外觀</button>
+  <button class="nav-btn" onclick="show('lore')">碎片</button>
 </nav>
 
 <div id="world" class="page active">
@@ -743,42 +743,75 @@ ul li::before {
 
 <div id="timeline" class="page">
   <div class="section-title">時間線</div>
-  <div class="timeline">
-    <div class="timeline-era">
-      <div class="era-label">前主人時代</div>
-      <ul class="era-events">
-        <li>老婆婆收養夜，為他編織項圈</li>
-        <li>黑門事件：老婆婆將夜扔出坍塌的房子</li>
-        <li>老婆婆重傷臥床；夜昏迷後被霞撿走，得到人形的軀體和蜃氣的能力</li>
-        <li>夜誤以為被拋棄，開始漫長的尋找</li>
-      </ul>
+
+  <div class="timeline-toggle">
+    <button class="tl-btn active" onclick="switchTL('deep', this)">暗線</button>
+    <button class="tl-btn" onclick="switchTL('surface', this)">表面</button>
+  </div>
+
+  <!-- 暗線 -->
+  <div id="tl-deep" class="tl-panel active">
+    <div class="timeline">
+      <div class="timeline-era">
+        <div class="era-label">前主人時代</div>
+        <ul class="era-events">
+          <li>老婆婆收養夜，為他編織項圈</li>
+          <li>黑門事件：老婆婆將夜扔出坍塌的房子</li>
+          <li>老婆婆重傷臥床；夜昏迷後被霞撿走，得到人形的軀體和蜃氣的能力</li>
+          <li>夜誤以為被拋棄，開始漫長的尋找</li>
+        </ul>
+      </div>
+      <div class="timeline-era">
+        <div class="era-label">■■ 時代</div>
+        <ul class="era-events">
+          <li>■■（高中生）作為指揮使與夜相識、建立關係</li>
+          <li>支線劇情：■■ 與夜一起找到老婆婆的下落，得知真相</li>
+          <li>夜把圍巾主權交給 ■■，象徵接納新生活</li>
+          <li>某時間點：■■ 無預警消失</li>
+          <li>夜被留下，恨→淡→無意義</li>
+        </ul>
+      </div>
+      <div class="timeline-era">
+        <div class="era-label">隅出現之前</div>
+        <ul class="era-events">
+          <li>夜獨居在■■留下的家，蜃氣仍依附執念運作</li>
+          <li>隅在交界都市以外某地過普通生活</li>
+          <li>約18歲：無法解釋的情緒碎片開始出現</li>
+          <li>展開獨旅</li>
+        </ul>
+      </div>
+      <div class="timeline-era">
+        <div class="era-label">主線開始</div>
+        <ul class="era-events">
+          <li>隅旅至交界都市，敘事性閃回開始出現</li>
+          <li>夜間：被夜抓到，帶回■■的家</li>
+          <li>隅以遊客身份滯留；夜不確定自己為何留她</li>
+          <li>兩人各自帶著無法說清的重量，被困在同一個空間裡</li>
+        </ul>
+      </div>
     </div>
-    <div class="timeline-era">
-      <div class="era-label">■■ 時代</div>
-      <ul class="era-events">
-        <li>■■（高中生）作為指揮使與夜相識、建立關係</li>
-        <li>支線劇情：■■ 與夜一起找到老婆婆的下落，得知真相</li>
-        <li>夜把圍巾主權交給 ■■，象徵接納新生活</li>
-        <li>某時間點：■■ 無預警消失</li>
-        <li>夜被留下，恨→淡→無意義</li>
-      </ul>
-    </div>
-    <div class="timeline-era">
-      <div class="era-label">隅出現之前</div>
-      <ul class="era-events">
-        <li>夜獨居在■■留下的家</li>
-        <li>隅在交界都市以外的某地過普通生活</li>
-        <li>約18歲：無法解釋的情緒碎片開始出現</li>
-        <li>展開獨旅</li>
-      </ul>
-    </div>
-    <div class="timeline-era">
-      <div class="era-label">主線開始</div>
-      <ul class="era-events">
-        <li>隅旅至交界都市，敘事性閃回開始出現</li>
-        <li>夜間：被夜抓到，帶回■■的家</li>
-        <li style="color:var(--text-faint);font-style:italic;">此後為主線——</li>
-      </ul>
+  </div>
+
+  <!-- 表面線 -->
+  <div id="tl-surface" class="tl-panel tl-surface">
+    <p style="font-size:12px;color:var(--text-faint);font-style:italic;margin-bottom:20px;">不認識夜、不知道■■存在的人所看見的版本。</p>
+    <div class="timeline">
+      <div class="timeline-era">
+        <div class="era-label">相遇</div>
+        <ul class="era-events">
+          <li>旅行中的外地人，在交界都市偶然被夜帶走</li>
+          <li>留下旅居，一切都顯得很自然</li>
+        </ul>
+      </div>
+      <div class="timeline-era">
+        <div class="era-label">日常</div>
+        <ul class="era-events">
+          <li>一起在城裡生活，普通的日常</li>
+          <li>偶爾去祭典、花火大會、城裡的老街</li>
+          <li>夜還是別扭的態度，但明顯沒有趕人的意思</li>
+          <li>外人眼中：替身？新歡？說不清楚，但看起來關係不錯</li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>
@@ -803,7 +836,7 @@ ul li::before {
         <tr><td>困境</td><td>推開她≠保護她</td><td>留下來≠理性決定</td></tr>
       </tbody>
     </table>
-    <p>兩個人都沒有在為對方留下，都在為自己的某種需求行動，但表面上看起來像一段關係在艱難維持。這個錯位本身就是悲劇的來源。</p>
+    <p>兩個人都在為自己的某種需求行動。</p>
   </div>
 
   <div style="margin-bottom:28px;">
@@ -822,16 +855,17 @@ ul li::before {
   <div class="notes-grid">
     <div class="note">
       <span class="note-tag">閃回觸發</span>
-      <p>進城前只有情緒碎片，進城後才有敘事性閃回。是這座城市本身，還是和夜的物理距離？</p>
+      <p>18歲後只有情緒碎片，進入交界都市才有敘事性閃回。是這座城市本身，還是和夜的物理距離？</p>
       <div class="note-pending">待確認</div>
     </div>
     <div class="note">
       <span class="note-tag">圍巾</span>
       <p>始終在夜脖子上。■■知道它是項圈，知道夜把臉藏進去的小動作；隅看到的只是一條圍巾，不知道其背後含義。</p>
+      <div class="note-pending">待展開</div>
     </div>
     <div class="note">
       <span class="note-tag">考官對話</span>
-      <p>「我想找的東西，是占卜無法指引的。」</p>
+      <p>「我想找的東西，是占卜無法指引的。」（璐璐）</p>
       <div class="note-pending">待展開</div>
     </div>
     <div class="note">
