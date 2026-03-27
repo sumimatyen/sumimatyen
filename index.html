@@ -745,56 +745,16 @@ ul li::before {
   <div class="section-title">時間線</div>
 
   <div class="timeline-toggle">
-    <button class="tl-btn active" onclick="switchTL('deep', this)">裏面</button>
-    <button class="tl-btn" onclick="switchTL('surface', this)">表面</button>
-  </div>
-
-  <!-- 暗線 -->
-  <div id="tl-deep" class="tl-panel active">
-    <div class="timeline">
-      <div class="timeline-era">
-        <div class="era-label">前主人時代</div>
-        <ul class="era-events">
-          <li>老婆婆收養夜，為他編織項圈</li>
-          <li>黑門事件：老婆婆將夜扔出坍塌的房子</li>
-          <li>老婆婆重傷臥床；夜昏迷後被霞撿走，得到人形的軀體和蜃氣的能力</li>
-          <li>夜誤以為被拋棄，開始漫長的尋找</li>
-        </ul>
-      </div>
-      <div class="timeline-era">
-        <div class="era-label">■■ 時代</div>
-        <ul class="era-events">
-          <li>■■（高中生）作為指揮使與夜相識、建立關係</li>
-          <li>支線劇情：■■ 與夜一起找到老婆婆的下落，得知真相</li>
-          <li>夜把圍巾主權交給 ■■，象徵接納新生活</li>
-          <li>某時間點：■■ 無預警消失</li>
-          <li>夜被留下，恨→淡→無意義</li>
-        </ul>
-      </div>
-      <div class="timeline-era">
-        <div class="era-label">隅出現之前</div>
-        <ul class="era-events">
-          <li>夜獨居在■■留下的家，蜃氣仍依附執念運作</li>
-          <li>隅在交界都市以外某地過普通生活</li>
-          <li>約18歲：無法解釋的情緒碎片開始出現</li>
-          <li>展開獨旅</li>
-        </ul>
-      </div>
-      <div class="timeline-era">
-        <div class="era-label">主線開始</div>
-        <ul class="era-events">
-          <li>隅旅至交界都市，敘事性閃回開始出現</li>
-          <li>夜間：被夜抓到，帶回■■的家</li>
-          <li>隅以遊客身份滯留；夜不確定自己為何留她</li>
-          <li>兩人各自帶著無法說清的重量，被困在同一個空間裡</li>
-        </ul>
-      </div>
-    </div>
+    <button class="tl-btn active" onclick="switchTL('surface', this)">表面</button>
+    <button class="tl-btn" onclick="switchTL('deep', this)">裏面</button>
   </div>
 
   <!-- 表面線 -->
-  <div id="tl-surface" class="tl-panel tl-surface">
-    <p style="font-size:12px;color:var(--text-faint);font-style:italic;margin-bottom:20px;">不認識夜、不知道■■存在的人所看見的版本。</p>
+  <div id="tl-surface" class="tl-panel active">
+    <p style="font-size:12px;color:var(--text-faint);font-style:italic;margin-bottom:20px;">
+      不認識夜、不知道■■存在的人所看見的版本。
+    </p>
+
     <div class="timeline">
       <div class="timeline-era">
         <div class="era-label">相遇</div>
@@ -803,6 +763,7 @@ ul li::before {
           <li>留下旅居，一切都顯得很自然</li>
         </ul>
       </div>
+
       <div class="timeline-era">
         <div class="era-label">日常</div>
         <ul class="era-events">
@@ -814,7 +775,111 @@ ul li::before {
       </div>
     </div>
   </div>
+
+  <!-- 裏面線 -->
+  <div id="tl-deep" class="tl-panel">
+    <div class="timeline">
+      <div class="timeline-era">
+        <div class="era-label">前主人時代</div>
+        <ul class="era-events">
+          <li>老婆婆收養夜，為他編織項圈</li>
+          <li>黑門事件：老婆婆將夜扔出坍塌的房子</li>
+          <li>老婆婆重傷臥床；夜昏迷後被霞撿走，得到人形的軀體和蜃氣的能力</li>
+          <li>夜誤以為被拋棄，開始漫長的尋找</li>
+        </ul>
+      </div>
+
+      <div class="timeline-era">
+        <div class="era-label">■■ 時代</div>
+        <ul class="era-events">
+          <li>■■（高中生）作為指揮使與夜相識、建立關係</li>
+          <li>支線劇情：■■ 與夜一起找到老婆婆的下落，得知真相</li>
+          <li>夜把圍巾主權交給 ■■，象徵接納新生活</li>
+          <li>某時間點：■■ 無預警消失</li>
+          <li>夜被留下，恨→淡→無意義</li>
+        </ul>
+      </div>
+
+      <div class="timeline-era">
+        <div class="era-label">隅出現之前</div>
+        <ul class="era-events">
+          <li>夜獨居在■■留下的家，蜃氣仍依附執念運作</li>
+          <li>隅在交界都市以外某地過普通生活</li>
+          <li>約18歲：無法解釋的情緒碎片開始出現</li>
+          <li>展開獨旅</li>
+        </ul>
+      </div>
+
+      <div class="timeline-era">
+        <div class="era-label">主線開始</div>
+        <ul class="era-events">
+          <li>隅旅至交界都市，敘事性閃回開始出現</li>
+          <li>夜間：被夜抓到，帶回■■的家</li>
+          <li>隅以遊客身份滯留；夜不確定自己為何留她</li>
+          <li>兩人各自帶著無法說清的重量，被困在同一個空間裡</li>
+        </ul>
+      </div>
+    </div>
+  </div>
 </div>
+
+<style>
+.tl-panel {
+  display: none;
+}
+
+.tl-panel.active {
+  display: block;
+}
+
+.timeline-toggle {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.tl-btn {
+  padding: 6px 14px;
+  border: 1px solid #666;
+  background: transparent;
+  cursor: pointer;
+}
+
+.tl-btn.active {
+  font-weight: bold;
+  border-color: #fff;
+}
+
+.timeline-era {
+  margin-bottom: 24px;
+}
+
+.era-label {
+  font-weight: bold;
+  margin-bottom: 8px;
+}
+
+.era-events {
+  margin: 0;
+  padding-left: 20px;
+}
+</style>
+
+<script>
+function switchTL(target, btn) {
+  document.querySelectorAll('.tl-panel').forEach(panel => {
+    panel.classList.remove('active');
+  });
+
+  document.getElementById('tl-' + target).classList.add('active');
+
+  document.querySelectorAll('.tl-btn').forEach(button => {
+    button.classList.remove('active');
+  });
+
+  btn.classList.add('active');
+}
+</script>
 
 <div id="tension" class="page">
   <div class="section-title">核心結構張力</div>
